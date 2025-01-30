@@ -43,7 +43,10 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "outputPath": "dist/hospital-management-frontend",
+              "baseHref": "/"
             },
             "development": {
               "optimization": false,
