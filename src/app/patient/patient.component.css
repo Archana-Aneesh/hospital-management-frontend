@@ -1,0 +1,258 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      height: 550px;
+      background: #e1e2e6; 
+  }
+  /* Container to center form and patients */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 460px;
+  }
+  
+  table {
+    width: 80%;
+    border-collapse: collapse; /* Makes the borders collapse into a single line */
+  }
+  
+  th {
+    text-align: right; /* Aligns the labels to the right */
+    padding: 2px; /* Adds padding for better spacing */
+  }
+  
+  th.align-left {
+    text-align: left; /* Aligns form inputs to the left */
+  }
+  
+  input, select {
+    width: 100%; /* Makes the input fields and select elements take full width */
+    padding: 8px; /* Adds padding inside the input fields */
+    margin-top: 5px; /* Adds margin to separate inputs from labels */
+    border-radius: 5px; /* Rounded corners for form elements */
+    border: 1px solid #ccc; /* Light border for inputs */
+  }
+  
+  label {
+    font-weight: bold; /* Makes the labels bold for better readability */
+  }
+  
+  
+  .patient-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .patient-form {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;
+    margin-left: 20px;
+  }
+  
+  .form-inner {
+    width: 100%;
+  }
+  
+  .patient-form header h1 {
+    font-size: 25px; /* Slightly larger for a more impactful header */
+    color: #076e62; /* Green color for a calming effect */
+    text-align: center;
+    margin-bottom: 25px; /* Increased space below the header */
+    font-style: italic;
+    font-family: 'Arial', sans-serif; /* Elegant font family */
+    font-weight: bold; /* Make the header bold for emphasis */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    letter-spacing: 1px; /* Add some spacing between letters */
+    margin-top: 10px;
+  }
+  
+  .patient-form header {
+    background-color: #e1e2e6; /* Soft background to contrast with text */
+    border-radius: 8px; /* Smooth corners for the header */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a subtle 3D effect */
+  }
+  
+  .patient-form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    margin-left: 40px;
+  }
+  
+  .patient-form input,
+  .patient-form select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .patient-form button {
+    background-color: #009688;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 180px;
+  }
+  
+  .patient-form button:hover {
+    background-color: #0096889c;
+  }
+  
+  /* Right Side: patients List */
+  .patients-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;
+    margin-left: 50px;
+    margin-right: 20px;
+    overflow-y: auto;
+  
+  }
+  
+  .patients-list header h1 {
+    font-size: 25px; /* Slightly larger for a more impactful header */
+    color: #076e62; /* Green color for a calming effect */
+    text-align: center;
+    margin-bottom: 25px; /* Increased space below the header */
+    font-style: italic;
+    font-family: 'Arial', sans-serif; /* Elegant font family */
+    font-weight: bold; /* Make the header bold for emphasis */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    letter-spacing: 1px; /* Add some spacing between letters */
+  }
+  
+  .patients-list header {
+    background-color: #e1e2e6; /* Soft background to contrast with text */
+    border-radius: 8px; /* Smooth corners for the header */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a subtle 3D effect */
+  }
+  
+  
+  .patients-list ul {
+    list-style: none;
+  }
+  
+  .patient-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .patient-item strong {
+    color: #4CAF50;
+  }
+  
+  .patient-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  
+  .card {
+    background-color: #e1e2e6;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 150px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .card-body h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card-body p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+  }
+  .card-actions {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the start */
+    gap: 8px; /* Set minimal spacing between buttons */
+    margin-top: 10px;
+  }
+  
+  .card-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  
+  .card-actions button:hover {
+    transform: scale(1.1);
+  }
+  
+  .card-actions .btn-edit {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .card-actions .btn-edit:hover {
+    background-color: #45a049;
+  }
+  
+  .card-actions .btn-delete {
+    background-color: #e61809;
+    color: white;
+  }
+  
+  .card-actions .btn-delete:hover {
+    background-color: #e61809;
+  }
+  

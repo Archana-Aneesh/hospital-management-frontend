@@ -1,0 +1,80 @@
+<div class="main-div">
+
+  <!-- Appointment Form and Appointments List -->
+  <div class="container">
+    <div class="appointment-wrapper">
+      <!-- Left Side: Appointment Form in Inner Div -->
+      <section class="appointment-form">
+        <div class="form-inner">
+          <header>
+            <h1>{{ isEditMode ? 'Edit Appointment' : 'Book an Appointment' }}</h1>
+          </header>
+          <br>
+          <form (ngSubmit)="createAppointment()" id="appointment-form" method="post">
+            <table>
+              <tr>
+                <th class="align-left"><label for="patient">Name : </label></th>
+                <th class="align-left">
+                  <select id="patient" name="patient" [(ngModel)]="patient" required>
+                    <option value="" disabled selected>--Patient's Name--</option>
+                    <option *ngFor="let patient of patients" [value]="patient.name">
+                      {{ patient.name }}
+                    </option>
+                  </select>
+                  <br>
+                </th>
+              </tr>
+              <tr>
+                <th class="align-left"><label for="date">Appointment Date : </label></th>
+                <th class="align-left">
+                  <input type="date" id="date" name="date" [(ngModel)]="date" required><br>
+                </th>
+              </tr>
+              <tr>
+                <th class="align-left"><label for="doctor">Doctor : </label></th>
+                <th class="align-left">
+                  <select id="doctor" name="doctor" [(ngModel)]="doctor" required>
+                    <option value="" disabled selected>--Select Doctor--</option>
+                    <option *ngFor="let doctor of doctors" [value]="doctor.name">
+                      {{ doctor.name }}
+                    </option>
+                  </select>
+                </th>
+              </tr>
+            </table>
+            
+            <br>
+
+             <button type="submit">{{ isEditMode ? 'Edit Appointment' : 'Take Appointment' }}</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Right Side: Added Appointments -->
+      <section class="appointments-list">
+        <header>
+          <h1>Appointments ({{ appointmentsCount }})</h1>
+        </header>
+        <div class="appointment-cards">
+          <div class="card" *ngFor="let appointment of appointments">
+            
+            <div class="card-body">
+              <h2 class="patient-name">{{ appointment.patient }}</h2>
+              <p><strong>Doctor:</strong> {{ appointment.doctor }}</p>
+              <p><strong>Date:</strong> {{ appointment.date | date: 'dd-MM-yyyy' }}</p>
+              <div class="card-actions">
+                <button class="btn-edit" (click)="editAppointment(appointment)">
+                  <i class="fa fa-edit"></i>
+                </button>
+                <button class="btn-delete" (click)="deleteAppointment(appointment)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="main-div">
+
+    <!-- patient Form and patients List -->
+    <div class="container">
+      <div class="patient-wrapper">
+        <!-- Left Side: patient Form in Inner Div -->
+        <section class="patient-form">
+          <div class="form-inner">
+            <header>
+              <h1>{{ isEditMode ? 'Edit Patient' : 'Add patient' }}</h1>
+            </header>
+            <br>
+            <form (ngSubmit)="addPatients()" id="patient-form" method="post">
+              <table>
+                <tr>
+                  <th class="align-left"><label for="name">Name : </label></th>
+                  <th class="align-left">
+                    <input type="text" id="name" name="name" [(ngModel)]="name" required><br>
+                  </th>
+                </tr>
+
+                <tr>
+                    <th class="align-left"><label for="age">Age : </label></th>
+                    <th class="align-left">
+                      <input type="number" min="1" id="age" name="age" [(ngModel)]="age" required><br>
+                    </th>
+                  </tr>
+               
+                <tr>
+                  <th class="align-left"><label for="gender">Gender : </label></th>
+                  <th class="align-left">
+                    <select id="gender" name="gender" [(ngModel)]="gender" required>
+                      <option value="female">Female</option>
+                      <option value="male">Male</option>
+                    </select>
+                  </th>
+                </tr>
+              </table>
+              
+              <br>
+  
+               <button type="submit">{{ isEditMode ? 'Update' : 'Add Patient' }}</button>
+            </form>
+          </div>
+        </section>
+  
+        <!-- Right Side: Added patients -->
+        <section class="patients-list">
+          <header>
+            <h1>Patients ({{ patientsCount }})</h1>
+          </header>
+          <div class="patient-cards">
+            <div class="card" *ngFor="let patient of patients">
+              
+              <div class="card-body">
+                <h2 class="patient-name">{{ patient.name }}</h2>
+                <p><strong>Age:</strong> {{ patient.age }}</p>
+                <p><strong>Gender:</strong> {{ patient.gender }}</p>
+                <div class="card-actions">
+                    <button class="btn-edit" (click)="editPatient(patient)">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                    <button class="btn-delete"  (click)="deletePatient(patient)">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+  </div>

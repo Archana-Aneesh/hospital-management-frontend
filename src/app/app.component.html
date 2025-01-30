@@ -1,0 +1,23 @@
+<!-- app.component.html -->
+<div class="outer-container">
+  <header>
+      <!-- Add default avatar image here -->
+      <img src="assets/images/logo.jpg" alt="Doctor Avatar" class="logo-image" />
+    <h1>LifeCare Hospital</h1>
+    <nav class="menu-container">
+      <ul class="menu">
+        <li><a href="javascript:void(0);" (click)="showWelcome()"><b>Home</b></a></li>
+        <li><a href="javascript:void(0);" (click)="showAppointments()">Appointments</a></li>
+        <li><a href="javascript:void(0);" (click)="showDoctors()">Doctors</a></li>
+        <li><a href="javascript:void(0);" (click)="showPatients()">Patients</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <app-welcome *ngIf="currentView === 'welcome'"></app-welcome>
+    <app-appointment *ngIf="currentView === 'appointments'"></app-appointment>
+    <app-doctors *ngIf="currentView === 'doctors'"></app-doctors>
+    <app-patient *ngIf="currentView === 'patients'"></app-patient>
+  </div>
+</div>

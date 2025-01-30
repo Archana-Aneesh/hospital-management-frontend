@@ -1,0 +1,49 @@
+
+  /* Welcome message center styling */
+  .welcome-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background: #e1e2e6; /* Soft blue gradient */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    padding: 10px;
+    font-style: italic;
+    font-size: 30px;
+  }
+  
+  .welcome-message h2 {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+  }
+
+  .hospital-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;  /* Align logo and name vertically */
+  }
+  
+  .logo-image {
+    width: 50px; /* Adjust logo size */
+    height: auto;
+    margin-right: 15px; /* Space between logo and hospital name */
+  }
+  
+  .hospital-name {
+    font-size: 24px;
+    color: #076e62; /* Adjust the color as needed */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+  }
+  

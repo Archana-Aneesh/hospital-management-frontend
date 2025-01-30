@@ -1,0 +1,77 @@
+<div class="main-div">
+
+    <!-- doctor Form and doctors List -->
+    <div class="container">
+      <div class="doctor-wrapper">
+        <!-- Left Side: doctor Form in Inner Div -->
+        <section class="doctor-form">
+          <div class="form-inner">
+            <header>
+              <h1>{{ isEditMode ? 'Edit Doctor' : 'Add Doctor' }}</h1>
+            </header>
+            <br>
+            <form (ngSubmit)="addDoctors()" id="doctor-form" method="post">
+              <table>
+                <tr>
+                  <th class="align-left"><label for="name">Name : </label></th>
+                  <th class="align-left">
+                    <input type="text" id="name" name="name" [(ngModel)]="name" required placeholder="Doctor's Name"><br>
+                  </th>
+                </tr>
+               
+                <tr>
+                  <th class="align-left"><label for="speciality">Speciality : </label></th>
+                  <th class="align-left">
+                    <select id="speciality" name="speciality" [(ngModel)]="speciality" required>
+                      <option value="" disabled selected>--Select--</option>
+                      <option value="ENT" [selected]="speciality === 'ENT'">ENT</option>
+                      <option value="Orthopedics" [selected]="speciality === 'Orthopedics'">Orthopedics</option>
+                      <option value="Hematology" [selected]="speciality === 'Hematology'">Hematology</option>
+                      <option value="Neurology" [selected]="speciality === 'Neurology'">Neurology</option>
+                      <option value="Pediatrics" [selected]="speciality === 'Pediatrics'">Pediatrics</option>
+                      <option value="Urology" [selected]="speciality === 'Urology'">Urology</option>
+                      <option value="Radiology" [selected]="speciality === 'Radiology'">Radiology</option>
+                      <option value="Cardiology" [selected]="speciality === 'Cardiology'">Cardiology</option>
+                    </select>
+                  </th>
+                </tr>
+              </table>
+              
+              <br>
+  
+               <button type="submit">{{ isEditMode ? 'Update' : 'Add Doctor' }}</button>
+            </form>
+          </div>
+        </section>
+  
+        <!-- Right Side: Added doctors -->
+        <section class="doctors-list">
+          <header>
+            <h1>Doctors ({{ doctorCount }})</h1>
+          </header>
+          <div class="doctor-cards">
+            <div class="card" *ngFor="let doctor of doctors">
+              
+              <div class="card-body">
+                <div class="avatar">
+                  <!-- Add default avatar image here -->
+                  <img src="assets/images/default-avatar.png" alt="Doctor Avatar" class="doctor-avatar" />
+                </div>
+                <h2 class="patient-name">{{ doctor.name }}</h2>
+                <p><strong>Speciality:</strong> {{ doctor.speciality }}</p>
+                <div class="card-actions">
+                  <button class="btn-edit" (click)="editDoctor(doctor)">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button class="btn-delete" (click)="deleteDoctor(doctor)">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+  </div>
