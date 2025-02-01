@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HospitalService {
-  private baseUrl = 'http://localhost:5000';
+  private baseUrl = 'https://hospital-management-system-zj7l.onrender.com';
 
   constructor(private http: HttpClient) {}
 
